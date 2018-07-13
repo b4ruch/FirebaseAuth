@@ -9,30 +9,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Twilio test</title>
+    <title>Firebase stuff</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyBp0s18TUbVk_y-HM2hSl-fHEfFzDm3-q8",
-            authDomain: "project1-team3-add85.firebaseapp.com",
-            databaseURL: "https://project1-team3-add85.firebaseio.com",
-            projectId: "project1-team3-add85",
-            storageBucket: "project1-team3-add85.appspot.com",
-            messagingSenderId: "325148478422"
-        };
-        firebase.initializeApp(config);
-    </script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href=""> -->
-    
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -47,41 +34,50 @@
     <div id="loader">Loading...</div>
 
 
-
+    <!-- <script src="" async defer></script> -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
 
-
-    <!-- <script>
-        ui.start('#firebaseui-auth-container', {
-            signInOptions: [
-                {
-                    provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                    requireDisplayName: false
-                }
-            ]
-        });
-        ui.start('#firebaseui-auth-container', {
-            signInOptions =[
-                firebase.auth.PhoneAuthProvider.PROVIDER_ID
-            ],
-            // Other config options...
-        });
-    </script> -->
-
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
     <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBp0s18TUbVk_y-HM2hSl-fHEfFzDm3-q8",
+            authDomain: "project1-team3-add85.firebaseapp.com",
+            databaseURL: "https://project1-team3-add85.firebaseio.com",
+            projectId: "project1-team3-add85",
+            storageBucket: "project1-team3-add85.appspot.com",
+            messagingSenderId: "325148478422"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <script>
+
         // Initialize the FirebaseUI Widget using Firebase.
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
+        // enable and configure the sign-in methods you want to support.
+        // ui.start('#firebaseui-auth-container', {
+        //     signInOptions: [
+        //         firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        //         // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+        //     ],
+        //     // Other config options...
+        // });
         var uiConfig = {
             callbacks: {
                 signInSuccessWithAuthResult: function (authResult, redirectUrl) {
                     // User successfully signed in.
                     // Return type determines whether we continue the redirect automatically
                     // or whether we leave that to developer to handle.
+                    alert("User successfully logged in");
                     return true;
                 },
                 uiShown: function () {
@@ -99,16 +95,14 @@
                 firebase.auth.PhoneAuthProvider.PROVIDER_ID
             ],
             // Terms of service url.
-            tosUrl: 'index.html'
+            tosUrl: '#'
         };
 
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
 
-        // $(document).ready(function () { });
-
     </script>
-    <!-- <script src="assets/javascript/twilio.js" async defer></script> -->
+
 </body>
 
 </html>
