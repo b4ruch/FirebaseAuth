@@ -109,7 +109,7 @@ window.onclick = function (event) {
     }
 }
 
-Get the modal
+// Get the modal
 var modalPhone = document.getElementById('firebaseui-auth-container');
 window.onclick = function (event) {
     if (event.target == modalPhone) {
