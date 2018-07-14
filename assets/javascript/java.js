@@ -137,7 +137,7 @@ var uiConfig = {
     signInSuccessUrl: 'index.html',
     signInOptions: [
         firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-        // firebase.auth.EmailAuthProvider.PROVIDER_ID
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
     ],
 
     callbacks: {
