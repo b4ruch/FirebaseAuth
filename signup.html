@@ -60,11 +60,11 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
     <script>
         var uiConfig = {
-            signInSuccessUrl: 'index.html',
+            signInSuccessUrl: 'https://b4ruch.github.io/FirebaseAuth/index.html',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
-                firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                firebase.auth.PhoneAuthProvider.PROVIDER_ID
+                firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID
             ],
             // Terms of service url.
             tosUrl: '#'
@@ -127,7 +127,9 @@
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
         // The start method will wait until the DOM is loaded.
-        ui.start('#firebaseui-auth-container', uiConfig);
+        if (ui.isPendingRedirect()) {
+            ui.start('#firebaseui-auth-container', uiConfig);
+        }
 
     </script>
 
