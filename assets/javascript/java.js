@@ -20,31 +20,6 @@ var phoneNum = "";
 var password = "";
 
 
-var uiConfig = {
-    signInSuccessUrl: 'index.html',
-    signInOptions: [
-        firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-        // firebase.auth.EmailAuthProvider.PROVIDER_ID
-    ],
-
-    callbacks: {
-        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-            // User successfully signed in.
-            return true;
-        },
-    },
-    // Terms of service url.
-    tosUrl: '#'
-};
-
-// Initialize the FirebaseUI Widget using Firebase.
-var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-// The start method will wait until the DOM is loaded.
-ui.start('#firebaseui-auth-container', uiConfig);
-
-
-
 // OnClick for form
 $("#form").submit(function () {
     console.log("人");
@@ -156,3 +131,27 @@ firebase.auth().onAuthStateChanged(function (user) {
 }, function (error) {
     console.log(error);
 });
+
+
+var uiConfig = {
+    signInSuccessUrl: 'index.html',
+    signInOptions: [
+        firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+        // firebase.auth.EmailAuthProvider.PROVIDER_ID
+    ],
+
+    callbacks: {
+        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+            // User successfully signed in.
+            return true;
+        },
+    },
+    // Terms of service url.
+    tosUrl: '#'
+};
+
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+// The start method will wait until the DOM is loaded.
+ui.start('#firebaseui-auth-container', uiConfig);
