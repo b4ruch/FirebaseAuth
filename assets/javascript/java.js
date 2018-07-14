@@ -110,6 +110,15 @@ window.onclick = function (event) {
     }
 }
 
+// Get the modal
+var modalPhone = document.getElementById('firebaseui-auth-container');
+window.onclick = function (event) {
+    if (event.target == modalPhone) {
+        modalPhone.style.display = "none";
+        console.log("click on modal phone");
+    }
+}
+
 //Global authentication object
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
