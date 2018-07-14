@@ -31,7 +31,7 @@
      Your app may use that space for branding, controls and other customizations.-->
     <h1>Welcome to My Awesome Sign-up</h1>
     <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
+    <!-- <div id="loader">Loading...</div> -->
 
 
     <!-- <script src="" async defer></script> -->
@@ -60,7 +60,7 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
     <script>
         var uiConfig = {
-            signInSuccessUrl: '<url-to-redirect-to-on-success>',
+            signInSuccessUrl: 'index.html',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
                 firebase.auth.EmailAuthProvider.PROVIDER_ID,
