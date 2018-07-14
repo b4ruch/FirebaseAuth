@@ -109,14 +109,14 @@ window.onclick = function (event) {
     }
 }
 
-// Get the modal
-// var modalPhone = document.getElementById('firebaseui-auth-container');
-// window.onclick = function (event) {
-//     if (event.target == modalPhone) {
-//         modalPhone.style.display = "none";
-//         console.log("click on modal phone");
-//     }
-// }
+Get the modal
+var modalPhone = document.getElementById('firebaseui-auth-container');
+window.onclick = function (event) {
+    if (event.target == modalPhone) {
+        modalPhone.style.display = "none";
+        console.log("click on modal phone");
+    }
+}
 
 //Global authentication object
 firebase.auth().onAuthStateChanged(function (user) {
@@ -145,8 +145,8 @@ var uiConfig = {
     signInSuccessUrl: 'index.html',
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
-        firebase.auth.PhoneAuthProvider.PROVIDER_ID
-        // firebase.auth.EmailAuthProvider.PROVIDER_ID
+        firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
     ],
 
     callbacks: {
