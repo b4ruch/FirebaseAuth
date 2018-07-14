@@ -1,14 +1,13 @@
-
 // Initialize Firebase
-// var config = {
-//     apiKey: "AIzaSyBp0s18TUbVk_y-HM2hSl-fHEfFzDm3-q8",
-//     authDomain: "project1-team3-add85.firebaseapp.com",
-//     databaseURL: "https://project1-team3-add85.firebaseio.com",
-//     projectId: "project1-team3-add85",
-//     storageBucket: "project1-team3-add85.appspot.com",
-//     messagingSenderId: "325148478422"
-// };
-// firebase.initializeApp(config);
+var config = {
+    apiKey: "AIzaSyBp0s18TUbVk_y-HM2hSl-fHEfFzDm3-q8",
+    authDomain: "project1-team3-add85.firebaseapp.com",
+    databaseURL: "https://project1-team3-add85.firebaseio.com",
+    projectId: "project1-team3-add85",
+    storageBucket: "project1-team3-add85.appspot.com",
+    messagingSenderId: "325148478422"
+};
+firebase.initializeApp(config);
 console.log("hi");
 var database = firebase.database();
 
